@@ -96,7 +96,7 @@ def dataframe_explorer(df: pd.DataFrame, case: bool = True) -> pd.DataFrame:
                     key=f"{random_key_base}_{column}",
                 )
                 if filters[column]:
-                    df = df[df[column].str.contains(filters[column], case=case)]
+                    df = df[df[column].str.contains(filters[column], case=case, na=False)]
 
     return df
 
